@@ -618,6 +618,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 30px;
+  filter:hue-rotate(-30deg);
+  
 }
 .shape-0{
   top: 15vh;

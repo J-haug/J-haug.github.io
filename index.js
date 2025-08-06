@@ -5,13 +5,47 @@ let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
 function moveBackground(event) {
-  const shapes = document.querySelectorAll(".shape");
-  const x = event.clientX * scaleFactor;
-  const y = event.clientY * scaleFactor;
+  let mouseX = event.clientX
+  let mouseY = event.clientY
+  
+  let number = 0
+  let shapes = document.querySelectorAll(`.shape`)
+  for (let i = 0; i < shapes.length; ++i) { 
+   if (number < 8){
+     number += 1
+   }
+   else{
+    number = 0
+   }
+    let shape = document.querySelector(`.shape-${number}`)
+    let rect = shape.getBoundingClientRect()
+    
+    
+  
+    
+    let shapeLeft = rect.x
+    let shapeTop = rect.y
+    let shapePos = [shapeLeft, shapeTop]
+    let mousePos = [mouseX, mouseY]
+    let vectorX = mousePos[0] - shapePos[0]
+    let vectorY = mousePos[1] - shapePos[1]
 
-  for (let i = 0; i < shapes.length; ++i) {
-    shapes[i].style.transform = 'translate(${x}px,${y}px)';
+    let rotation = Math.atan2(vectorX, vectorY)
+    shape.style.transform = `rotate(${-rotation + 3.14159}rad)`
+     
+
+    
   }
+
+  // const shapes = document.querySelectorAll(".shape");
+  // const x = event.clientX * scaleFactor;
+  // const y = event.clientY * scaleFactor;
+  
+  // for (let i = 0; i < shapes.length; ++i) {
+  //   const isOdd = i % 2 !== 0;
+  //   const boolInt = isOdd ? -1 : 1
+  //   shapes[i].style.transform = `translate(${x * boolInt}px,${y * boolInt}px)`;
+  
 }
 
 function toggleContrast() {
