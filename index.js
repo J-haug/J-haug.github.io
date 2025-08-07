@@ -19,13 +19,8 @@ function moveBackground(event) {
    }
     let shape = document.querySelector(`.shape-${number}`)
     let rect = shape.getBoundingClientRect()
-    
-    
   
-    
-    let shapeLeft = rect.x
-    let shapeTop = rect.y
-    let shapePos = [shapeLeft, shapeTop]
+    let shapePos = [rect.x, rect.y]
     let mousePos = [mouseX, mouseY]
     let vectorX = mousePos[0] - shapePos[0]
     let vectorY = mousePos[1] - shapePos[1]

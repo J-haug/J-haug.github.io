@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --color__main: rgb(13, 77, 214);
-  --color__secondary: rgb(231, 129, 56);
+  --color__main: #093FB4;
+  --color__secondary: #ED3500;
 }
 
 * {
@@ -266,7 +266,6 @@ nav {
 }
 
 .social__link {
-  background-color: var(--color__secondary);
   color: white;
   padding: 6px;
   width: 32px;
