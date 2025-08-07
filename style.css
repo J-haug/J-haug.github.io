@@ -2,7 +2,7 @@
 
 :root {
   --color__main: rgb(13, 77, 214);
-  --color__secondary: rgb(56, 161, 231);
+  --color__secondary: rgb(231, 129, 56);
 }
 
 * {
@@ -37,6 +37,7 @@ li {
 section {
   background-color: white;
   transition: all 300ms ease;
+  
 }
 
 input,
@@ -73,7 +74,10 @@ textarea {
   height: 100px;
   margin-top: 8px;
 }
-
+h1{
+  position: relative;
+  z-index: 1;
+}
 p {
   line-height: 1.5;
   font-size: 16px;
@@ -150,15 +154,17 @@ button {
 
 nav,
 .scroll,
-header {
+header,
+.shape {
   opacity: 1;
   visibility: visible;
-  transition: all 600ms 400ms;
+  transition: opacity 600ms 400ms;
 }
 
 .modal--open nav,
 .modal--open .scroll,
-.modal--open header {
+.modal--open header,
+.modal--open .shape{
   opacity: 0;
   visibility: hidden;
   transition: all 400ms;
@@ -192,6 +198,7 @@ header {
 .dark-theme .mail__btn{
   background-color: white;
   color: #242424;
+  
 }
 /* NAVAGATION  */
 
@@ -283,6 +290,7 @@ nav {
   position: fixed;
   bottom: 32px;
   right: 32px;
+  z-index: 3;
 }
 
 .scroll {
@@ -290,6 +298,7 @@ nav {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .scroll__icon {
@@ -585,6 +594,8 @@ footer {
   background-color: #242424;
   display: flex;
   padding: 6% 0;
+  position: relative;
+  z-index: 2;
 }
 
 .footer__row {
@@ -620,7 +631,7 @@ footer {
   align-items: center;
   padding-top: 30px;
   filter:hue-rotate(-30deg);
-  
+  z-index: 0;
 }
 .shape-0{
   top: 15vh;
@@ -632,7 +643,7 @@ footer {
 }
 .shape-2{
   top: 15vh;
-  left: 80vw;
+  right: 5vw;
 }
 .shape-3{
   top: 50vh;
@@ -644,7 +655,7 @@ footer {
 }
 .shape-5{
   top: 50vh;
-  left: 80vw;
+  right: 5vw;
 }
 .shape-6{
   top: 80vh;
@@ -656,5 +667,5 @@ footer {
 }
 .shape-8{
   top: 80vh;
-  left: 80vw;
+  right: 5vw;
 }
